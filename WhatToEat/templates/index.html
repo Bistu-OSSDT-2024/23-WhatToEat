@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Index</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  {% load static %}
+  <link href="{% static 'resources/css/axure_rp_page.css' %}" type="text/css" rel="stylesheet"/>
+  <link href="{% static 'data/styles.css' %}" type="text/css" rel="stylesheet"/>
+  <link href="{% static 'files/index/styles.css' %}" type="text/css" rel="stylesheet"/>
+  <script src="{% static 'resources/scripts/jquery-3.7.1.min.js' %}"></script>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    #base {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ax_default.image img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .ax_default._一级标题, .ax_default._三级标题, .ax_default.droplist {
+      width: 90%;
+      max-width: 400px;
+      margin: 10px 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="base" class="">
+
+    <!-- Unnamed (图片) -->
+    <div id="u0" class="ax_default image">
+      <img id="u0_img" class="img " src="{% static 'images/index/u0.png' %}" alt="Image 1"/>
+      <div id="u0_text" class="text " style="display:none; visibility: hidden">
+        <p></p>
+      </div>
+    </div>
+
+    <!-- Unnamed (图片) -->
+    <div id="u1" class="ax_default image">
+      <img id="u1_img" class="img " src="{% static 'images/index/u1.png' %}" alt="Image 2"/>
+      <div id="u1_text" class="text " style="display:none; visibility: hidden">
+        <p></p>
+      </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u2" class="ax_default _一级标题">
+      <div id="u2_div" class=""></div>
+      <div id="u2_text" class="text ">
+        <p><span>WTE</span></p>
+      </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u3" class="ax_default _三级标题">
+      <div id="u3_div" class=""></div>
+      <div id="u3_text" class="text ">
+        <p><span>What to eat</span></p>
+      </div>
+    </div>
+
+    <!-- Botton to upload -->
+    <div id="u4" class="ax_default _形状">
+      <img id="u4_img" class="img " src="{% static 'images/index/u4.png' %}" alt="Upload Menu"/>
+      <div id="u4_text" class="text " style="display:none; visibility: hidden">
+        <p></p>
+      </div>
+    </div>
+
+    <!-- Hidden file input and form for uploading -->
+    <form id="uploadForm" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="file" id="fileInput" name="file" style="display: none;" />
+      <input type="hidden" id="dropdown" name="dropdown" value="">
+    </form>
+
+    <!-- Unnamed (下拉列表) -->
+    <div id="u5" class="ax_default droplist">
+      <div id="u5_div" class=""></div>
+      <select id="u5_input" class="u5_input">
+        <option class="u5_input_option" value="中文">中文</option>
+        <option class="u5_input_option" selected value="English">English</option>
+        <option class="u5_input_option" value="Русский">Русский</option>
+        <option class="u5_input_option" value="Français">Français</option>
+        <option class="u5_input_option" value="日本語">日本語</option>
+        <option class="u5_input_option" value="Deutsch">Deutsch</option>
+        <option class="u5_input_option" value="한국어">한국어</option>
+        <option class="u5_input_option" value="Українська">Українська</option>
+        <option class="u5_input_option" value="العربية">العربية</option>
+        <option class="u5_input_option" value="Italiano">Italiano</option>
+        <option class="u5_input_option" value="ไทย">ไทย</option>
+        <option class="u5_input_option" value="Suomi">Suomi</option>
+        <option class="u5_input_option" value="Tiếng Việt">Tiếng Việt</option>
+        <option class="u5_input_option" value="Nederlands">Nederlands</option>
+        <option class="u5_input_option" value="Čeština">Čeština</option>
+      </select>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u6" class="ax_default _三级标题">
+      <div id="u6_div" class=""></div>
+      <div id="u6_text" class="text ">
+        <p><span>Language:</span></p>
+      </div>
+    </div>
+
+    <!-- Unnamed (矩形) -->
+    <div id="u7" class="ax_default _三级标题">
+      <div id="u7_div" class=""></div>
+      <div id="u7_text" class="text ">
+        <p><span>Upload menu</span></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('u4_img').addEventListener('click', function() {
+      document.getElementById('fileInput').click();
+    });
+
+    document.getElementById('fileInput').addEventListener('change', function() {
+      var formData = new FormData(document.getElementById('uploadForm'));
+      var dropdownValue = document.getElementById('u5_input').value;
+      formData.append('dropdown', dropdownValue);
+
+      fetch("{% url 'upload' %}", {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.message);
+        if (data.message === "图片上传成功，正在解析中！") {
+          fetch("{% url 'run_python_code' %}")
+          .then(response => response.json())
+          .then(data => {
+            if (data.redirect_url) {
+              window.location.href = data.redirect_url;
+            }
+          });
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('上传失败！');
+      });
+    });
+  </script>
+</body>
+</html>

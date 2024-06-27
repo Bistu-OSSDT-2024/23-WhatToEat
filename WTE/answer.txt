@@ -1,0 +1,17 @@
+这是泰国餐厅的菜单，以下是具体内容：
+
+- **มะเขือยาวไก่ทอดกับเนื้อ (THAI EGGPLANT WITH BEEF)**：Dieses Gericht enthält Thailändische Aubergine und Rindfleisch. Es hat einen würzigen, leicht süßen Geschmack. Enthält keine allergenen Zutaten. Preis in Deutschmark (nach internationaler Wechselkurs): 1,50 DM
+
+- **สลัดมะละกอทะเล (PAPAYA WITH SEAFOOD)**：Dieses Salat enthält grüne Papaya und verschiedene Meeresfrüchte wie Garnelen und Fisch. Er ist frisch und scharf. Enthält keine allergenen Zutaten. Preis in Deutschmark: 1,25 DM
+
+- **สลัดเส้นบัวลวดทะเล (SEAFOOD GLASS NOODLE SALAD)**：Dieser Salat besteht aus Glasnudeln, Meeresfrüchten wie Garnelen und Fisch sowie Gemüse. Er ist leicht und frisch im Geschmack. Enthält keine allergenen Zutaten. Preis in Deutschmark: 1,25 DM
+
+- **สลัตย์ส้มโอ (GRAPEFRUIT SALAD)**：Dieser Salat enthält Grapefruit, Chili, Zwiebeln und Ingwer. Er ist saftig und leicht scharf. Enthält keine allergenen Zutaten. Preis in Deutschmark: 1,25 DM
+
+以下是翻译说明：
+
+- **菜名**：我用泰语呈现了每个菜名。
+- **食材**：我用德语介绍了每个菜品的食材。
+- **口味**：我用德语描述了每个菜品的口味。
+- **过敏食材**：我用德语说明了是否有常见的过敏食材。
+- **金额**：我用德语展示了按照国际汇率换算的金额，这里假设了一个简单的换算率（实际情况中汇率会变动），仅作为示例。
