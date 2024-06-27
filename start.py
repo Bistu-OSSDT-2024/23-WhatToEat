@@ -1,8 +1,6 @@
 import os
 import subprocess
 import sys
-from tqdm import tqdm
-
 
 def install_packages():
     with open('requirements.txt', 'r') as f:
