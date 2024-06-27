@@ -73,10 +73,10 @@ python3 start.py
 ---
 
 ## 贡献者
-
 <a href="https://github.com/Bistu-OSSDT-2024/23-FOSA_BM/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Bistu-OSSDT-2024/23-FOSA_BM" />
 </a>
+
 
 
 ---
