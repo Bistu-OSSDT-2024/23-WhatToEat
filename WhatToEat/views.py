@@ -40,7 +40,7 @@ def run_python_code(request):
         file_path = os.path.join(settings.BASE_DIR, 'temp', 'upload_photo.jpg')
         data = image_to_base64(file_path)
         file_name = os.path.join(settings.BASE_DIR, 'WTE', 'answer.txt')
-        client = ZhipuAI(api_key="d2e845a24a2d639cffc2b0508677fbeb.h442q5kqXXuL96Mz")
+        client = ZhipuAI(api_key="your_api_key_here")
 
         response = client.chat.completions.create(
             model="glm-4v",
