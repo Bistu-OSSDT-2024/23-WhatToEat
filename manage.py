@@ -19,4 +19,7 @@ def main():
 
 
 if __name__ == "__main__":
+    from django.core.management.commands.runserver import Command as Runserver
+    Runserver.default_addr = '0.0.0.0'
+    Runserver.default_port = '80'
     main()
