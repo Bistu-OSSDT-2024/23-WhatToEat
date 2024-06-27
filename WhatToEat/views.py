@@ -87,6 +87,7 @@ def run_python_code(request):
 
         response = client.chat.completions.create(
             model="glm-4-0520",
+            max_tokens = 4095,
             messages=[
                 {"role": "user", "content": string + '''
                 输出：1.用旅游地的语言呈现菜名
