@@ -1,6 +1,6 @@
 # <center>**WTE - What To Eat**</center>
 
-## Thank you to FlyDinosaur(https://github.com/FlyDinosaur/) for helping us write the code
+### Thank you to FlyDinosaur(https://github.com/FlyDinosaur/) for helping us write the code
 
 ## <center>一款实用的AI智能翻译菜谱软件</center>
 
