@@ -67,6 +67,8 @@ python3 start.py
 
 ![image-20240627092039200](readme_files/how_to_use/result.jpg)
 
+#### 因为结果是ai实时生成，故等待时间较长，上传照片后请耐心等待
+
 
 ---
 
